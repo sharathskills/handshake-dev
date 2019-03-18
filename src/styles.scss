@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.nsm-dialog {
+    width: 1000px;
+    max-width: 1140px;
+    margin: 0 auto;
+
+  }
+$color-overlay: rgba(0, 0, 0, 0);
+$dialog-position-top: 20%;
+
+
+@import "~ngx-smart-modal/ngx-smart-modal";
+// @import "app/app.component";
+
+
+
+*{
+    margin: 0px;
+    max-width: 1280px !important;
+}
+
+body {
+    font-family: 'Source Sans Pro';
+    
+}
+
+.pad{
+    margin: 15px;
+}
+.max{
+    width: 1140px;
+    height:1140px;
+}

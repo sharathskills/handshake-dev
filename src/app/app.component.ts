@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'page1';
+  constructor(public ngxSmartModalService: NgxSmartModalService) {
+      }
 }
