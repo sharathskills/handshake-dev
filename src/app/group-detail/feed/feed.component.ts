@@ -13,7 +13,7 @@ export interface Section {
 })
 export class FeedComponent {
 
-  constructor(public ngxSmartModalService: NgxSmartModalService) { }
+  constructor() { }
 
   links: Section[] = [
     {

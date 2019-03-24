@@ -21,7 +21,10 @@ $dialog-position-top: 20%;
 
 body {
     font-family: 'Source Sans Pro';
-    
+}
+
+.example-spacer {
+    flex: 1 1 auto;
 }
 
 .pad{
@@ -30,4 +33,10 @@ body {
 .max{
     width: 1140px;
     height:1140px;
+}
+
+.img-round {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
 }

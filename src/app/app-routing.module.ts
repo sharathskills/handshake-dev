@@ -8,6 +8,7 @@ import { ResourceComponent } from './group-detail/resource/resource.component';
 import { GoalComponent } from './group-detail/goal/goal.component';
 import { FeedShowComponent } from './group-detail/feed/feed-show/feed-show.component';
 import { HomeComponent } from './home/home.component';
+import { FeedCreateComponent } from './group-detail/feed/feed-create/feed-create.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'goal', component: GoalComponent }
     ]
   },
-  { path: 'groups/:id/:name/feed/:fid', component: FeedShowComponent }
+  { path: 'groups/:id/:name/feed/new', component: FeedCreateComponent },
+  { path: 'groups/:id/:name/feed/:fid', component: FeedShowComponent },
 ];
 
 @NgModule({

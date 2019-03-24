@@ -6,7 +6,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 interface User {
@@ -24,6 +24,7 @@ interface User {
 export class AuthService {
 
   user$: Observable<User>;
+  authChange = new Subject<boolean>();
 
   constructor(
       private afAuth: AngularFireAuth,
@@ -48,7 +49,10 @@ export class AuthService {
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
+
+    this.authSuccessfully();
     return this.updateUserData(credential.user);
+
   }
 
   private updateUserData(user) {
@@ -69,6 +73,11 @@ export class AuthService {
   async signOut() {
     await this.afAuth.auth.signOut();
     this.router.navigate(['/']);
+  }
+
+  private authSuccessfully() {
+    this.authChange.next(true);
+    this.router.navigate(['/groups']);
   }
 
 
